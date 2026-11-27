@@ -1,0 +1,23 @@
+# 1. Single loop, 5V source and 1k resistor (unique)
+V1,n1,0,5
+R1,n1,0,1000
+
+# 2. Two-resistor series divider (unique)
+V1,n1,0,12
+R1,n1,n2,1000
+R2,n2,0,2000
+
+# 3. Parallel branches (unique)
+V1,n1,0,9
+R1,n1,0,1000
+R2,n1,0,2000
+R3,n1,0,3000
+
+# 4. Floating isolated node: dependent equations / infinitely many solutions
+R1,n1,0,1000
+R2,n2,n3,2000
+
+# 5. Conflicting ideal voltage sources in parallel (no solution)
+V1,n1,0,5
+V2,n1,0,8
+R1,n1,0,1000
